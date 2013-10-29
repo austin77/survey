@@ -1,0 +1,182 @@
+/*========Mixins============*/
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+/*========Layout============*/
+
+/* Header */
+
+.header {
+  height: 50px;
+  display: block;
+  background: #19b0cf;
+  position: relative;
+}
+.header .title,
+.header .nav {
+  height: 50px;
+}
+.header .title {
+  width: 30%;
+  color: white;
+  font-size: 35px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+.header .nav ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  margin-top: 5px;
+}
+.header .nav ul li {
+  list-style: none;
+  font-family: 'Ubuntu', sans-serif;
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.header .nav ul li:hover {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  background: white;
+}
+.header .nav ul li:hover a {
+  color: #19b0cf;
+}
+.header .nav ul li.active {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  background: white;
+}
+.header .nav ul li.active a {
+  color: #19b0cf;
+}
+.header .nav ul li a {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* Content */
+
+.content {
+  background: url('../img/content-bg.png');
+}
+/* Footer */
+
+.footer {
+  height: 40px;
+  display: block;
+  background: #148ba5;
+}
+/* Home Page */
+
+#home-page .promo {
+  background: url('../img/promo.png') center center no-repeat;
+  height: 500px;
+}
+#home-page .inner {
+  width: 90%;
+  margin: 50px auto;
+}
+#home-page #call-to-action {
+  background: white;
+  padding: 50px 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -box-sizing: border-box;
+  -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  -ms-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  -o-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+}
+#home-page #call-to-action p {
+  font-size: 50px;
+  line-height: 1.2em;
+  text-align: center;
+}
+#survey-page .inner {
+  width: 90%;
+  margin: 20px auto;
+  padding: 10px;
+}
+#survey-page ul.questions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#survey-page ul.questions li.question {
+  background: white;
+  display: inline-table;
+  width: 48%;
+  margin-bottom: 10px;
+  margin-right: 1%;
+  padding: 20px 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -box-sizing: border-box;
+  -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  -ms-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  min-height: 155px;
+}
+#survey-page ul.questions li.question.error {
+  -webkit-box-shadow: 0px 1px 5px rgba(226, 19, 19, 0.75);
+  -moz-box-shadow: 0px 1px 5px rgba(226, 19, 19, 0.75);
+  -ms-box-shadow: 0px 1px 5px rgba(226, 19, 19, 0.75);
+  box-shadow: 0px 1px 5px rgba(226, 19, 19, 0.75);
+}
+#survey-page ul.questions li.question .title {
+  font-weight: bold;
+  font-size: 18px;
+}
+#survey-page .survey-actions {
+  width: 70%;
+  margin: 0 auto;
+  height: 40px;
+  text-align: center;
+}
+#survey-page .survey-actions .btn {
+  padding: 10px 100px;
+}
+#survey-complete-page .inner {
+  background: white;
+  color: #333333;
+  width: 70%;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -box-sizing: border-box;
+  -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  -ms-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+}
+#survey-complete-page .inner h3 {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+#survey-complete-page .inner p {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: normal;
+}

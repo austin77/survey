@@ -1,0 +1,200 @@
+@import 'mixins.less';
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+/*========Layout============*/
+
+/* Header */
+.header
+{
+	height: 50px;
+	display: block;
+	background: #19B0CF;
+	position: relative;
+
+	.title, .nav {
+		height: 50px;
+	}
+
+	.title
+	{
+		width: 30%;
+		color: #FFF;
+		font-size: 35px;
+		padding-bottom: 10px;
+		text-align: center;
+		font-family: 'Ubuntu', sans-serif;
+		font-weight: 700;
+	}
+
+	.nav
+	{
+		ul
+		{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			margin-top: 5px;
+			li
+			{
+				list-style: none;
+				font-family: 'Ubuntu', sans-serif;
+				display: inline-block;
+				padding-top: 10px; padding-bottom: 10px;
+				padding-right: 10px; padding-left: 10px;
+				.transition(all, 0.2s, ease-in);
+
+				&:hover
+				{
+					.border-radius(4px);
+					background: #FFF;
+					a { color: #19b0cf; }
+				}
+				&.active
+				{
+					.border-radius(4px);
+					background: #FFF;
+					a { color: #19b0cf; }
+				}
+
+				a
+				{
+					text-align: center;
+					text-decoration: none;
+					color: #FFF;
+					display: inline-block;
+					padding-left:20px;
+					padding-right: 20px;
+				}
+			}
+		}
+	}
+}
+
+/* Content */
+.content
+{
+	background: url('../img/content-bg.png');
+}
+
+/* Footer */
+.footer
+{
+	height: 40px;
+	display: block;
+	background: #148BA5;
+}
+
+/* Home Page */
+#home-page
+{
+	.promo
+	{
+		background: url('../img/promo.png') center center no-repeat;
+		height: 500px;
+	}
+	.inner 
+	{
+		width: 90%;
+		margin: 50px auto;
+	}
+
+	#call-to-action
+	{
+		background: #FFF;
+		padding: 50px 30px;
+		.box-sizing(border-box);
+		-webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+		-moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+		-ms-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+		-o-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+		box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+
+		p
+		{
+			font-size: 50px;
+			line-height: 1.2em;
+			text-align: center;
+		}
+	}
+}
+
+#survey-page
+{
+	.inner
+	{
+		width: 90%;
+		margin: 20px auto;
+		padding: 10px;
+	}
+
+	ul.questions
+	{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li.question
+		{
+			background: #FFF;
+			display: inline-table;
+			width: 48%;
+			margin-bottom: 10px;
+			margin-right: 1%;
+			padding: 20px 50px;
+			.box-sizing(border-box);	
+			-webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+			-moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+			-ms-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+			box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+			min-height: 155px;
+
+			&.error
+			{
+				-webkit-box-shadow: 0px 1px 5px rgba(226, 19, 19, 0.75);
+				-moz-box-shadow: 0px 1px 5px rgba(226, 19, 19, 0.75);
+				-ms-box-shadow: 0px 1px 5px rgba(226, 19, 19, 0.75);
+				box-shadow: 0px 1px 5px rgba(226, 19, 19, 0.75);
+			}
+			.title
+			{
+				font-weight: bold;
+				font-size: 18px;
+			}
+		}
+	}
+
+	.survey-actions
+	{
+		width: 70%;
+		margin: 0 auto;
+		height: 40px;
+		text-align: center;
+
+		.btn
+		{
+			padding: 10px 100px;
+		}
+	}
+}
+
+#survey-complete-page
+{
+	.inner
+	{
+		background: #FFF;
+		color: #333;
+		width: 70%;
+		margin: 50px auto;
+		padding: 20px;
+		text-align: left;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-box-sizing: border-box;
+		-webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+		-moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+		-ms-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+		box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+		h3 { text-align: center; font-family: 'Ubuntu', sans-serif;}
+		p { font-family: 'Ubuntu', sans-serif; font-weight: normal;}
+	}
+}
