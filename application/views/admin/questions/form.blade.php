@@ -47,12 +47,16 @@
 
 	<div class="form-group">
 		<label for="title">Question Title</label>
-		<input class="form-control" type="text" name="title" id="title">
+		@if($question)
+		<input class="form-control" type="text" name="title" id="title" value="{{ $question->title }}">
+		@else
+		<input class="form-control" type="text" name="title" id="title" >
+		@endif
 	</div>
 
 	<div class="form-group">
 		<label for="required">Required</label>
-		{{ Form::select('required', array(0=> "No" , 1=> "Yes"), 0, array("class"=>"form-control")) }}
+		{{ Form::select('required', array(0=> "No" , 1=> "Yes"), ($question) ? $question->required : 0, array("class"=>"form-control")) }}
 	</div>
 
 	<div class="form-group">
@@ -66,6 +70,16 @@
 	<div class="form-group options">
 		<h3>Question Options</h3>
 		<ul id="option-list">
+		@foreach($question->options as $option)
+		<li class="option">
+			<a href="">{{ $option->value }}</a>
+			<div class="actions">
+				<a href="#" class="remove-option" data-value="{{ $option->value }}"><i class="icon icon-close"></i> Remove</a>
+			</div>
+		</li>
+
+		<input type="hidden" name="option[]" value="{{ $option->value }}">
+		@endforeach
 		</ul>
 	</div>
 

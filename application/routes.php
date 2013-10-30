@@ -12,8 +12,15 @@
 
 //Top level routes
 Route::get('/', 'pages@index');
-Route::get('survey', 'pages@survey');
+Route::get('about', 'pages@contact');
+Route::get('contact', 'pages@contact');
+Route::post('contact', 'pages@send_message');
+Route::get('how-it-works', 'pages@features');
+Route::get('privacy', 'pages@privacy');
+Route::get('tos', 'pages@tos');
 
+//Survey
+Route::get('survey', 'pages@survey');
 Route::post('survey/answer', 'survey@answer');
 Route::get('survey/complete', 'survey@complete');
 
@@ -24,6 +31,7 @@ Route::get('admin/questions', 'admin.questions@index');
 
 Route::get('admin/questions/add', 'admin.questions@showForm');
 Route::post('admin/questions/add', 'admin.questions@add');
+Route::post('admin/questions/update/(:num)', 'admin.questions@update');
 
 Route::get('admin/questions/delete/(:num)', 'admin.questions@delete');
 

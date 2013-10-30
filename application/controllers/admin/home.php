@@ -1,6 +1,6 @@
 <?php
 	
-	class Admin_Home_Controller extends Base_Controller
+	class Admin_Home_Controller extends Admin_Controller
 	{
 		public $layout = "layouts.admin";
 

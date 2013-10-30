@@ -36,6 +36,5 @@
 return array(
 
 	'docs' => array('handles' => 'docs'),
-	'useragent' => array('auto'=>true)
-
+	'messages' => array('auto' => true),
 );

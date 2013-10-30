@@ -1,0 +1,240 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+@import 'mixins.less';
+/* Layout */
+
+/* Header */
+.header
+{
+	background: #19B0CF;
+	border-color: #137E92;
+	margin: 0;
+	.navbar-header
+	{
+		a.navbar-brand {
+			color: #FFF;
+			font-family: 'Ubuntu', sans-serif;
+			font-size: 20px;
+		}
+		.navbar-toggle
+		{
+			border: none;
+			&:hover {
+				background: #17A4C1;
+			}
+		}
+	}
+	.navbar-collapse
+	{
+		border-color: #137E92;
+		ul.nav
+		{
+			li
+			{
+				a
+				{
+					color: #FFF;
+					font-family: 'Ubuntu', sans-serif;
+					&:hover
+					{
+						background: #FFF;
+						color: #19B0CF;
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer
+{
+	width: 100%;
+	background: #137E92;
+
+	.social-share
+	{
+		width: 100%;
+		text-align: center;
+		h4 {
+			text-align: center;
+			color: #FFF;
+			margin: 0;
+			padding:5px;
+		}
+		a
+		{
+			text-align: center;
+			display: inline-block;
+			text-decoration: none;
+			font-size: 16px;
+			padding: 15px 20px;
+			background: #FFF;
+			color: #148BA5;
+
+			.transition(all, 0.2s, ease-in);
+			&:hover
+			{
+				background: #15ADCE;
+				color: #FFF;
+			}
+		}
+	}
+
+	.footer-links
+	{
+		width: 100%;
+		text-align: center;
+
+		a
+		{
+			display: inline-block;
+			color: #FFF;
+			text-decoration: none;
+			text-align: center;
+			padding: 10px 20px;
+			&:hover
+			{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.copyright
+	{
+		text-align: center;
+		color: #FFF;
+		padding: 20px 0;
+		border-top: 1px solid #FFF;
+	}
+}
+
+/* Content */
+.content
+{
+	background: url('../img/content-bg.png');
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	.inner
+	{
+		width: 90%;
+		background: #FFF;
+		margin: 0 auto;
+	}
+}
+
+/* Pages */
+#home-page
+{
+	.inner
+	{
+		text-align: center;
+		padding: 10px;
+		.box-sizing(border-box);
+		font-family: 'Ubuntu', sans-serif;
+		font-size: 20px;
+		p {
+			margin-top: 50px;
+		}
+
+		a.btn {
+			margin-bottom: 50px;
+			margin-top: 50px;
+		}
+	}
+
+	.promo
+	{
+		width: 90%;
+		margin: 20px auto;
+
+		img
+		{
+			max-width: 100%;
+			height: 300px;
+		}
+	}
+}
+
+#survey-page
+{
+	.disclaimer
+	{
+		text-align: center;
+		font-size: 18px;
+	}
+	.user-contact-data-form
+	{
+		background: #FFF;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+
+	.questions
+	{
+		margin: 0;
+		padding: 0;
+		width: 100%;
+
+		.question
+		{
+			width: 100%;
+			margin-bottom: 10px;
+			background: #FFF;
+			list-style: none;
+			display: block;
+			.box-sizing(border-box);
+			padding: 15px;
+
+			.title 
+			{
+				color: #333;
+			}
+		}
+	}
+}
+
+#survey-complete-page
+{
+	.inner
+	{
+		padding: 20px;
+		.box-sizing(border-box);
+		h3 {
+			font-family: 'Ubuntu', sans-serif;
+			font-size: 18px;
+			text-align: center;
+		}
+		p {
+			margin-top: 30px;
+			margin-bottom: 30px;
+			text-align: left;
+		}
+	}
+}
+
+#contact-page
+{
+	.top, .bottom
+	{
+		width: 100%;
+		background: #FFF;
+		padding: 10px;
+		.box-sizing(border-box);
+		margin-bottom: 10px;
+
+		h3
+		{
+			text-align: center;
+			font-family: 'Ubuntu', sans-serif;
+			font-size: 18px;
+		}
+	}
+
+	.bottom
+	{
+		.form-group.error
+		{
+			.help-block { color: red; font-family: 'Ubuntu', sans-serif;}
+		}
+	}
+}

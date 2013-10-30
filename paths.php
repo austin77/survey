@@ -24,7 +24,7 @@
 $environments = array(
 
 	'local' => array('http://localhost*', '*.dev'),
-
+  'production' => array('http://opinion-booth.com','http://http://50.28.9.117'),
 );
 
 // --------------------------------------------------------------

@@ -19,18 +19,22 @@
 				}
 			}
 
+			Session::put('email', Input::get('email'));
+
 			$validator = Validator::make(Input::all(), $validation_rules);
 
 			if($validator->fails())
 			{
+				Input::flash();
 				return Redirect::to('survey')->with_errors($validator);
 			}
 			else
 			{
 				//create respondent
 				$respondent = new Respondent;
-				$respondent->email = Input::get('email');
+				$respondent->email = Input::get('email', Session::get('email'));
 				$respondent->mobile = Input::get('mobile', NULL);
+				$respondent->ip_address = Request::ip();
 
 				$respondent->save();
 
@@ -47,7 +51,7 @@
 					$answer->save();
 				}
 
-				Session::put('email', Input::get('email'));
+				Session::put('email', Input::get('email', Session::get('email')));
 				return Redirect::to('survey/complete');
 			}
 		}
@@ -58,6 +62,6 @@
 			//Clear session
 			Session::forget('email');
 			//Render view
-			$this->layout->nest('content', 'pages.surveycomplete', $data);
+			$this->layout->nest('content', $this->view_path('pages.surveycomplete'), $data);
 		}
 	}

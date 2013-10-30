@@ -1,6 +1,6 @@
 <?php
 	
-	class Admin_Questions_Controller extends Base_Controller
+	class Admin_Questions_Controller extends Admin_Controller
 	{
 
 		public $layout = "layouts.admin";
@@ -32,7 +32,7 @@
 			{
 				$this->viewdata['id'] = $id;
 				$this->viewdata['action'] = "edit";
-				$this->viewdata['question'] = Question::find((int) $id);
+				$this->viewdata['question'] = Question::with('options')->find((int) $id);
 			}
 
 			$this->layout->nest('content', 'admin.questions.form', $this->viewdata);
@@ -82,7 +82,31 @@
 
 		public function action_update($id) 
 		{
+			$question = Question::with('options')->find((int) $id);
 
+			$question->title = Input::get('title');
+			$question->required = Input::get('required');
+
+			if($question->save())
+			{
+				foreach($question->options as $option)
+				{
+					$option->delete();
+				}
+
+				$options = Input::get('option');
+				//options are available, add them
+				if(count($options) > 0)
+				{
+					foreach($options as $key => $option) {
+						$opt = Option::create(array("question_id" => $question->id, "value" => $option));
+					}
+					//Flash notification message
+					Session::flash('message', 'Questions successfully updated!');
+					//redirect to form
+					return Redirect::to('admin/questions/edit/'.$question->id);
+				}
+			}
 		}
 
 		public function action_delete($id)
